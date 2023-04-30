@@ -14,7 +14,7 @@ module Yettings
 
     def find_ymls
       main_file = "#{Rails.root.to_s}/config/yetting.yml"
-      yettings_main_file = File.exists?(main_file) ? [main_file] : []
+      yettings_main_file = File.exist?(main_file) ? [main_file] : []
       yettings_namespaced_files = Dir.glob("#{Rails.root.to_s}/config/yettings/**/*.yml").sort
       yettings_main_file.concat(yettings_namespaced_files)
     end
